@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navigation_bar.css">
+    <link rel="stylesheet" href="css/content_index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Вход</title>
+</head>
+
+<body>
+    <nav role="navigation" class="nav">
+        <ul class="nav-items">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link"><span>Главная</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html" class="nav-link"><span>Посещаемость</span></a>
+                <nav class="submenu">
+                    <ul class="submenu-items">
+                        <li class="submenu-item"><a href="index.html" class="submenu-link">По группам</a></li>
+                        <li class="submenu-item"><a href="index.html" class="submenu-link">Выезды на места
+                                практики</a>
+                        </li>
+                    </ul>
+                </nav>
+            </li>
+            <li class="nav-item">
+                <a href="index.html" class="nav-link"><span>Студенты</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="index.html" class="nav-link"><span>Предприятия</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="index.html" class="nav-link"><span>Документы</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html" class="nav-link"><span>Дополнительно</span></a>
+                <nav class="submenu">
+                    <ul class="submenu-items">
+                        <li class="submenu-item"><a href="about.html" class="submenu-link">О нас</a></li>
+                        <li class="submenu-item"><a href="conacts.html" class="submenu-link">Контакты</a></li>
+                        <li class="submenu-item"><a href="support.html" class="submenu-link">Поддержка</a></li>
+                        <li class="submenu-item"><a href="FAQ.html" class="submenu-link">FAQ</a></li>
+                    </ul>
+                </nav>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="description content-item">
+            <img src="img/logo.svg" class="logo">
+            <div class="description-text">
+                <ul>
+                    <li>
+                        <p><span class="bold">ПрактикON</span> представляет собой информационную систему для более
+                            простого
+                            и удобного процесса руководством практикой</p>
+                    </li>
+                    <li>
+                        <p><span class="bold">ПрактикON</span> разработан с уклоном на все базовые задачи:
+                            Отслеживание посещаемости, распредение студентов по местам практики,
+                            отслеживание информации о студентах и организациях,
+                            а также быстрое формиррование документов на целые группы</p>
+                    </li>
+                    <li>
+                        <p>Работа в <span class="bold">ПрактикON</span> облегчается наглядным представлением данных
+                            в
+                            таблицах, с возможностью добавлять, удалять или изменять данные</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="auth-form content-item">
+            <div class="sign-in-form">
+                <h2>Вход</h2>
+                <div class="sign-in-inputs">
+                    <div class="input-group">
+                        <label for="login">Логин</label>
+                        <input type="email" name="login" placeholder="Введите логин" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" name="password" placeholder="Введите пароль" required>
+                        <i class="fa-regular fa-eye toggle-password"></i>
+                    </div>
+                    <div class="container button">
+                        <button class="sign-in-button">Войти</button>
+                    </div>
+                </div>
+                <p>Нет аккаунта? <a><span class="bold toggle-link" id="show-sign-up">Зарегистрироваться</span></a>
+                </p>
+            </div>
+
+            <div class="sign-up-form" style="display: none;">
+                <h2>Регистрация</h2>
+                <div class="sign-up-inputs">
+                    <div class="input-group">
+                        <label for="login">Логин</label>
+                        <input type="email" name="login" placeholder="Введите логин" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="uName">Имя</label>
+                        <input type="text" name="uName" placeholder="Введите имя" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="uSurName">Фамилия</label>
+                        <input type="text" name="uSurName" placeholder="Введите фамилию" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" name="password" placeholder="Введите пароль" required>
+                        <i class="fa-regular fa-eye toggle-password"></i>
+                    </div>
+                    <div class="container button">
+                        <button class="sign-up-button">Зарегистрироваться</button>
+                    </div>
+                </div>
+                <p>Уже зарегистрированы? <a><span class="bold toggle-link" id="show-sign-in">Войти сейчас</span></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/index_dropdown.js"></script>
+<script src="js/flip_sign_form.js"></script>
+<script src="js/show_password.js"></script>
+</html>

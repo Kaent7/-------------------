@@ -1,0 +1,130 @@
+.content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.content-item {
+    width: 600px;
+    height: 720px;
+    background-color: #fff;
+    border-radius: 24px 24px 0 0;
+}
+
+.logo {
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 32px;
+    margin-bottom: 40px;
+}
+
+.description-text {
+    margin-left: 24px;
+    margin-right: 24px;
+    font-size: 20px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.sign-up-form,
+.sign-in-form {
+    text-align: center;
+    font-size: 20px;
+}
+
+.sign-up-form h2,
+.sign-in-form h2 {
+    text-align: left;
+    margin: 60px 0 78px 64px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.sign-up-form p {
+    font-size: 16px;
+}
+
+.input-group {
+    position: relative;
+    margin: 24px auto;
+    width: 80%;
+}
+
+.input-group input {
+    display: block;
+    height: 56px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.input-group input:hover {
+    border: 1px solid #888888;
+}
+
+.input-group label {
+    position: absolute;
+    bottom: 43px;
+    left: 12px;
+    background: white;
+    padding: 5px;
+    font-size: 12px;
+    color: #666;
+    pointer-events: none;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #ccc;
+    font-size: 18px;
+    transition: .1s ease-in-out;
+}
+
+.toggle-password:hover {
+    color: #666;
+    transition: .1s ease-in-out;
+}
+
+.sign-in-button,
+.sign-up-button {
+    width: 80%;
+    height: 56px;
+    border-radius: 10px;
+    border: none;
+    background-color: #8AAAD4;
+    font-size: 18px;
+    font-weight: bold;
+    color: #0D1B2A;
+    transition: .2s ease-in-out;
+}
+
+.sign-in-button:hover,
+.sign-up-button:hover {
+    background-color: #3d6da8;
+    color: #fff;
+    transition: .2s ease-in-out;
+}
+
+.sign-up-form p {
+    margin-top: 88px;
+}
+
+.sign-in-form p {
+    margin-top: 248px;
+    font-size: 16px;
+}
