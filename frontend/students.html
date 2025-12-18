@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/navigation_bar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-content {
+            background: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .student-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .student-table th,
+        .student-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+    </style>
     <title>Студенты</title>
 </head>
+
 <body>
     <nav role="navigation" class="nav">
         <ul class="nav-items">
@@ -18,8 +52,10 @@
                 <a href="index.html" class="nav-link"><span>Посещаемость</span></a>
                 <nav class="submenu">
                     <ul class="submenu-items">
-                        <li class="submenu-item"><a href="attendance_group.html" class="submenu-link">По группам</a></li>
-                        <li class="submenu-item"><a href="attendance_visit.html" class="submenu-link">Выезды на места практики</a>
+                        <li class="submenu-item"><a href="attendance_group.html" class="submenu-link">По группам</a>
+                        </li>
+                        <li class="submenu-item"><a href="attendance_visit.html" class="submenu-link">Выезды на места
+                                практики</a>
                         </li>
                     </ul>
                 </nav>
@@ -46,6 +82,43 @@
             </li>
         </ul>
     </nav>
+
+<div class="content">
+        <h1>Студенты и группы</h1>
+        <button id="open-group-modal">Создать новую группу</button>
+        <div id="tables-container"></div>
+    </div>
+
+    <div id="group-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-group" style="float:right; cursor:pointer;">&times;</span>
+            <h2>Новая группа</h2>
+            <input type="text" id="m-group-name" class="input-field" placeholder="Название группы">
+            <input type="text" id="m-curator-name" class="input-field" placeholder="ФИО Куратора">
+            <input type="text" id="m-curator-phone" class="input-field" placeholder="Номер телефона">
+            
+            <button id="add-student-row-btn">+ Добавить студента</button>
+            <table style="margin-top:10px;">
+                <thead><tr><th>ФИО</th><th>Статус</th><th></th></tr></thead>
+                <tbody id="temp-students-body"></tbody>
+            </table>
+            <button id="final-save-group" style="width:100%; margin-top:20px; background:green; color:white; padding:10px; border:none; cursor:pointer;">СОХРАНИТЬ В БД</button>
+        </div>
+    </div>
+
+    <div id="student-modal" class="modal">
+        <div class="modal-content" style="width:300px;">
+            <span class="close" id="close-student" style="float:right; cursor:pointer;">&times;</span>
+            <h3>Данные студента</h3>
+            <input type="text" id="s-last-name" class="input-field" placeholder="Фамилия">
+            <input type="text" id="s-first-name" class="input-field" placeholder="Имя">
+            <input type="text" id="s-patronymic" class="input-field" placeholder="Отчество">
+            <label><input type="checkbox" id="s-on-budget"> Бюджет</label>
+            <button id="confirm-add-student" style="width:100%; margin-top:10px; padding:8px;">Добавить в список</button>
+        </div>
+    </div>
 </body>
 <script src="js/index_dropdown.js"></script>
+<script src="js/students.js"></script>
+
 </html>

@@ -52,28 +52,28 @@
     </nav>
 
     <div class="content">
-        <img src="" alt="profile photo">
-
-        <p>Логин: </p>
-        <p>Имя Фамилия</p>
-        <p>Дата регистрации: </p>
+        <p>Логин: <span id="u-login">...</span></p>
+        <p id="u-fullname">Имя Фамилия</p>
+        <p>Дата регистрации: <span id="u-created">...</span></p>
 
         <i class="fas fa-gear"></i>
 
         <div class="groups">
             <p>Группы практики:</p>
+            <ul id="u-groups-list"></ul>
 
+            <div class="add-group-form">
+                <input type="text" id="group-input" placeholder="Название группы (напр. ИС-41)">
+                <button id="add-group-btn">Добавить</button>
+            </div>
         </div>
 
         <div class="profile-settings">
-            <img src="" alt="profile photo">
-            <button>Изменить</button>
-
-            <p>Имя Фамилия</p>
-            <button>Изменить</button>
+            <p class="settings-fullname">Имя Фамилия</p>
         </div>
     </div>
 </body>
 <script src="js/index_dropdown.js"></script>
+<script src="js/profile.js"></script>
 
 </html>

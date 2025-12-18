@@ -25,8 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const response = await fetch('/api/auth/register', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ login, password, first_name, last_name })
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        login,
+                        password,
+                        first_name,
+                        last_name
+                    })
                 });
 
                 const data = await response.json();
@@ -56,15 +63,19 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const response = await fetch('/api/auth/login', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ login, password })
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        login,
+                        password
+                    })
                 });
 
                 const data = await response.json();
-
                 if (response.ok) {
                     localStorage.setItem('token', data.token);
-                    window.location.href = '/students'; // Переход на страницу студентов
+                    window.location.href = '/user'; // переход в личный кабинет
                 } else {
                     alert(data.error || 'Неверный логин или пароль');
                 }
