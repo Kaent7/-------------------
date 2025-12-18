@@ -2,18 +2,16 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../db');
 
-// Получить все организации
 router.get('/', async (req, res) => {
     try {
-        const result = await pool.query('SELECT * FROM organisations ORDER BY org_name');
+        const result = await pool.query('SELECT * FROM organisations ORDER BY org_name ASC');
         res.json(result.rows);
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
 });
 
-// Добавить новую организацию
-router.post('/', async (req, res) => {
+router.post('/add', async (req, res) => {
     const { org_name, address, full_name, phone_number } = req.body;
     try {
         const result = await pool.query(

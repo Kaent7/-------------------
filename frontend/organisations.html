@@ -1,13 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/navigation_bar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-content {
+            background: #fff;
+            margin: 10% auto;
+            padding: 25px;
+            width: 400px;
+            border-radius: 8px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .btn-add {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
     <title>Организации</title>
 </head>
+
 <body>
     <nav role="navigation" class="nav">
         <ul class="nav-items">
@@ -18,8 +76,10 @@
                 <a href="index.html" class="nav-link"><span>Посещаемость</span></a>
                 <nav class="submenu">
                     <ul class="submenu-items">
-                        <li class="submenu-item"><a href="attendance_group.html" class="submenu-link">По группам</a></li>
-                        <li class="submenu-item"><a href="attendance_visit.html" class="submenu-link">Выезды на места практики</a>
+                        <li class="submenu-item"><a href="attendance_group.html" class="submenu-link">По группам</a>
+                        </li>
+                        <li class="submenu-item"><a href="attendance_visit.html" class="submenu-link">Выезды на места
+                                практики</a>
                         </li>
                     </ul>
                 </nav>
@@ -46,6 +106,44 @@
             </li>
         </ul>
     </nav>
+
+    <div class="content">
+        <h1>Реестр организаций</h1>
+        <button id="open-org-modal" class="btn-add">Добавить организацию</button>
+
+        <div id="org-list-container">
+            <table id="org-table">
+                <thead>
+                    <tr>
+                        <th>Название</th>
+                        <th>Адрес</th>
+                        <th>Представитель (ФИО)</th>
+                        <th>Телефон</th>
+                    </tr>
+                </thead>
+                <tbody id="org-table-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="org-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-org-modal" style="float:right; cursor:pointer; font-size:24px;">&times;</span>
+            <h2>Новая организация</h2>
+            <input type="text" id="o-name" class="input-field" placeholder="Название организации">
+            <input type="text" id="o-address" class="input-field" placeholder="Юридический адрес">
+            <input type="text" id="o-full-name" class="input-field" placeholder="ФИО представителя">
+            <input type="text" id="o-phone" class="input-field" placeholder="Номер телефона">
+
+            <button id="save-org-btn"
+                style="width:100%; padding:12px; background:green; color:white; border:none; border-radius:4px; cursor:pointer;">
+                СОХРАНИТЬ
+            </button>
+        </div>
+    </div>
 </body>
 <script src="js/index_dropdown.js"></script>
+<script src="js/organisations.js"></script>
+
 </html>

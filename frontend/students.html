@@ -11,32 +11,39 @@
         .modal {
             display: none;
             position: fixed;
-            z-index: 999;
+            z-index: 1000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.5);
         }
 
         .modal-content {
             background: #fff;
             margin: 5% auto;
             padding: 20px;
-            width: 60%;
+            width: 50%;
             border-radius: 8px;
         }
 
-        .student-table {
+        .input-field {
             width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
         }
 
-        .student-table th,
-        .student-table td {
-            border: 1px solid #ccc;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
             padding: 8px;
+            text-align: left;
         }
     </style>
     <title>Студенты</title>
@@ -83,38 +90,50 @@
         </ul>
     </nav>
 
-<div class="content">
-        <h1>Студенты и группы</h1>
-        <button id="open-group-modal">Создать новую группу</button>
-        <div id="tables-container"></div>
+    <div class="content">
+        <h1>Мои Группы и Студенты</h1>
+        <button id="open-group-modal"
+            style="padding:10px; background:#007bff; color:white; border:none; cursor:pointer;">+ Создать
+            группу</button>
+        <div id="tables-container" style="margin-top:20px;"></div>
     </div>
 
     <div id="group-modal" class="modal">
         <div class="modal-content">
-            <span class="close" id="close-group" style="float:right; cursor:pointer;">&times;</span>
-            <h2>Новая группа</h2>
+            <span id="close-group" style="float:right; cursor:pointer;">&times;</span>
+            <h2>Параметры группы</h2>
             <input type="text" id="m-group-name" class="input-field" placeholder="Название группы">
             <input type="text" id="m-curator-name" class="input-field" placeholder="ФИО Куратора">
-            <input type="text" id="m-curator-phone" class="input-field" placeholder="Номер телефона">
-            
-            <button id="add-student-row-btn">+ Добавить студента</button>
-            <table style="margin-top:10px;">
-                <thead><tr><th>ФИО</th><th>Статус</th><th></th></tr></thead>
+            <input type="text" id="m-curator-phone" class="input-field" placeholder="Телефон куратора">
+
+            <button id="add-student-row-btn" style="margin-bottom:10px;">+ Добавить студента в список</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Студент</th>
+                        <th>Организация</th>
+                        <th></th>
+                    </tr>
+                </thead>
                 <tbody id="temp-students-body"></tbody>
             </table>
-            <button id="final-save-group" style="width:100%; margin-top:20px; background:green; color:white; padding:10px; border:none; cursor:pointer;">СОХРАНИТЬ В БД</button>
+            <button id="final-save-group"
+                style="width:100%; margin-top:20px; background:green; color:white; padding:10px; border:none; cursor:pointer;">СОХРАНИТЬ
+                В МОЙ ПРОФИЛЬ</button>
         </div>
     </div>
 
     <div id="student-modal" class="modal">
-        <div class="modal-content" style="width:300px;">
-            <span class="close" id="close-student" style="float:right; cursor:pointer;">&times;</span>
+        <div class="modal-content" style="width:350px;">
+            <span id="close-student" style="float:right; cursor:pointer;">&times;</span>
             <h3>Данные студента</h3>
             <input type="text" id="s-last-name" class="input-field" placeholder="Фамилия">
             <input type="text" id="s-first-name" class="input-field" placeholder="Имя">
             <input type="text" id="s-patronymic" class="input-field" placeholder="Отчество">
+            <label>Назначить организацию:</label>
+            <select id="s-organisation" class="input-field"></select>
             <label><input type="checkbox" id="s-on-budget"> Бюджет</label>
-            <button id="confirm-add-student" style="width:100%; margin-top:10px; padding:8px;">Добавить в список</button>
+            <button id="confirm-add-student" style="width:100%; margin-top:10px; padding:10px;">Добавить</button>
         </div>
     </div>
 </body>

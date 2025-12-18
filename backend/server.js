@@ -15,6 +15,7 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/groups', require('./routes/groupRoutes'));
 app.use('/api/students', require('./routes/studentRoutes'));
+app.use('/api/organisations', require('./routes/organisationRoutes'));
 
 app.get('/:page', (req, res) => {
     const page = req.params.page;
